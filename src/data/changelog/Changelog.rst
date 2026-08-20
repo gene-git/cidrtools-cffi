@@ -6,17 +6,33 @@ Tags
 
 .. code-block:: text
 
-	0.3.0 (2026-08-13) -> HEAD (2026-08-18)
-	32 commits.
+	0.3.0 (2026-08-13) -> 1.0.0 (2026-08-20)
+	39 commits.
 
 Commits
 =======
 
 
-* 2026-08-18  : **HEAD**
+* 2026-08-20  : **1.0.0**
 
 .. code-block:: text
 
+              - installer - clean before doing install
+              - tidy up unit test code
+              - Move tests into src/ directory
+ 2026-08-19   ⋯
+
+.. code-block:: text
+
+              - Update test_cidr_blocks_invalid_parsing_raises() now that excess prefixes are automatically repaired to the max allowed for tha networ family
+              - small change in text when ValueError raised by CidrBlock
+ 2026-08-18   ⋯
+
+.. code-block:: text
+
+              - little fix for uv install to only install runtime python
+                  meson handles the manuals etc
+              - manual update
               - lint whitespace
  2026-08-17   ⋯
 

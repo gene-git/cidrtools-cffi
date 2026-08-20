@@ -158,9 +158,9 @@ class CidrBlock():
         E.g. 10.2.2.3/24 => 0.0.0.3
         Note that the host bits are tracked internally but the cidr is always "fixed"
         Example:
-            cidr = CidrBlock("192.168.1.22/24")
-            str(cidr) --> "192.168.1.0/24"
-            cidr.get_host_bits() --> "0.0.0.22"
+        - cidr = CidrBlock("192.168.1.22/24")
+        - str(cidr) --> "192.168.1.0/24"
+        - cidr.get_host_bits() --> "0.0.0.22"
         """
         return self.format_host_bits()
 
