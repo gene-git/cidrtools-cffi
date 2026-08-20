@@ -6,14 +6,21 @@ Tags
 
 .. code-block:: text
 
-	1.0.0 (2026-08-20) -> 1.0.3, origin/master (2026-08-20)
-	6 commits.
+	1.0.0 (2026-08-20) -> 1.0.4 (2026-08-20)
+	8 commits.
 
 Commits
 =======
 
 
-* 2026-08-20  : **1.0.3, origin/master**
+* 2026-08-20  : **1.0.4**
+
+.. code-block:: text
+
+              - Readme update
+              - Fix typo in Readme
+
+* 2026-08-20  : **1.0.3**
 
 .. code-block:: text
 
