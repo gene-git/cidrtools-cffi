@@ -1,6 +1,6 @@
-==============
-cidrtools-ffi
-==============
+===============
+cidrtools-cffi
+===============
 
 Python CFFI bindings for the high-performance `cidrtools <https://github.com/gene-git/cidrtools>`_
 C library. 
