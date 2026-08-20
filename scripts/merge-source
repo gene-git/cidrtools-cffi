@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+file="TMP_MERGED.py"
+echo "" > $file
+for i in c*py
+do
+echo "" >> $file
+echo " == $i ==" >> $file
+cat $i >> $file
+done

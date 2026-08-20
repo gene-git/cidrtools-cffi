@@ -1,0 +1,30 @@
+
+[project]
+name = "cidrtools-cffi"
+version = "0.3.0"
+description = "Python CFFI bindings for the cidrtools library"
+readme = "Readme.rst"
+requires-python = ">=3.14"
+license = {text = "GPL-2.0-or-later"}
+authors = [
+    {name = "Gene C", email = "arch@sapience.com"}
+]
+
+[build-system]
+requires = ["meson-python>=0.20.0", "meson>=1.12.0"]
+build-backend = "mesonpy"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Operating System :: POSIX :: Linux",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]
+
+[tool.meson-python.args]
+# uv should only install the run time module (not manuals etc)
+install = ["--tags=runtime,python-runtime"]
+

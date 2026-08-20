@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+uv sync
+uv pip install -e .
+uv run ./tests/test_a.py
+uv run pytest ./tests/test_wrapper.py
+uv run pytest ./tests/test_wrapper_2.py
+

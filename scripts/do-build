@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+echo "************************ BUILD **************************"
+export PATH="/usr/bin"
+export CFLAGS=""
+export LDFLAGS=""
+
+meson setup --reconfigure build/release
+
+uv_opts=(
+    --python /usr/bin/python
+    --no-build-isolation
+    --link-mode=copy
+    )
+
+/bin/rm -f dist/*
+/usr/bin/uv build "${uv_opts[@]}" --wheel
+/usr/bin/rm -f uv.lock
+
+#uv sync
+#uv pip install -e .
+#uv run ./tests/test_a.py
+#uv run pytest ./tests/test_wrapper.py
+#uv run pytest ./tests/test_wrapper_2.py
+

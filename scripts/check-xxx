@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+#
+# Source code checks
+#
+# Run in top level after build/install to build/pkg
+# 
+# Requires
+# - pylint
+# - pycodestyle
+# - mypy
+# Clean up whitespace etc: /usr/bin/uv run ruff format foo.py
+# Can run via meson instead of using build/pkg:
+# meson devenv -C build/release env mypy "${opts[@]}" ../../src/pycidrtools
+#
+echo "===================================="
+echo "🛡️ Static Analysis Validation Checks"
+echo "===================================="
+
+dest=$(realpath "./xxx")
+export PYTHONPATH="$dest"
+
+echo -e "\n==> pylint"
+pylint --max-line-length=110 "$dest"/cidrtools/*.py
+
+echo -e "\n==> pycodestyle"
+pycodestyle --max-line-length=110 "$dest"/cidrtools/*.py
+
+echo -e "\n==> mypy"
+opts=(--check-untyped-defs --follow-untyped-imports --show-error-context --pretty)
+mypy "${opts[@]}" "$dest"/cidrtools
+
+exit
+echo -e "\ntests dir"
+
+pylint --max-line-length=110 tests/*.py
+pycodestyle --max-line-length=110 tests/*.py
+mypy "${opts[@]}" tests/

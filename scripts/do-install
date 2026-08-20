@@ -1,0 +1,39 @@
+#!/bin/bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2024-present  Gene C <arch@sapience.com>
+#
+# installer script for cidrtools-ffi
+# e.g. Call from PKGBUILD:  
+#   ./do-install ${pkgdir}
+#
+# gene c
+#
+if (( $# < 1 )) ; then
+    dest="./build/pkg"
+else
+    dest="$1"
+fi
+pkgdir=$(realpath "$dest")
+
+echo "************************ INSTALL ************************"
+/usr/bin/meson install -C build/release --destdir "$pkgdir" > /dev/null
+
+sitedir=$(/usr/bin/python3 -c "import site; print(site.getsitepackages()[0])")
+installdir="${dest}${sitedir}"
+
+/usr/bin/rm -rf "$installdir"
+
+uv_opts=(
+    --python /usr/bin/python
+    --system
+    --no-build-isolation
+    --link-mode=copy
+    --compile-bytecode
+)
+
+# shared
+/usr/bin/uv pip install ${uv_opts[@]} --target "$installdir" dist/*.whl
+/usr/bin/rm -rf "$installdir"/.lock
+
+
+

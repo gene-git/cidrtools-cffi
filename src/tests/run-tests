@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+#
+# Must bein tests dir to run
+#
+dest=$(realpath ../)
+export PYTHONPATH="$dest"
+
+#./test_a.py
+/usr/bin/pytest -s -v \
+    test_cidr_block.py \
+    test_cidr_blocks.py \
+    test_class_cidrtools.py \
+    test_wrapper_2.py \
+    test_wrapper_3.py \
+    test_wrapper_4.py
