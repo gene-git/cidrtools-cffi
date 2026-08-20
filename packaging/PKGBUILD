@@ -10,7 +10,7 @@ pkgname='cidrtools-cffi'
 pkgdesc='Python CFFI bindings for the cidrtools C-library'
 _gitname='cidrtools-cffi'
 
-pkgver="1.0.2"
+pkgver="1.0.3"
 pkgrel=1
 url="https://github.com/gene-git/cidrtools-cffi"
 
@@ -60,7 +60,7 @@ build() {
 }
 
 check() {
-    cd "${_gitname}/tests"
+    cd "${_gitname}"
     ./scripts/run-tests
 }
 
