@@ -6,13 +6,13 @@
 # Maintainer: Gene C <arch@sapience.com>
 # Contributor: 
 # 
-pkgname='cidrtools-ffi'
+pkgname='cidrtools-cffi'
 pkgdesc='Python CFFI bindings for the cidrtools C-library'
-_gitname='cidrtools-ffi'
+_gitname='cidrtools-cffi'
 
 pkgver="1.0.0"
 pkgrel=1
-url="https://github.com/gene-git/cidrtools-ffi"
+url="https://github.com/gene-git/cidrtools-cffi"
 
 arch=(x86_64)
 license=(GPL-2.0-or-later)
