@@ -17,24 +17,47 @@ C structures and all the functions in the shared library.
 Features
 ========
 
-* **Zero-Overhead Performance:** Runs complex operations (like block compacting) at native C speeds.
-* **Highly Maintainable:** Written in pure Python via CFFI ABI mode — no compilation needed.
-* **Modern Tooling :** managed by ``uv``, ``meson``, and ``meson-python``.
-* **Robust Interface:** Memory handling, garbage collection provided via three classes.
+* Wraps C-library into 3 Python classes.
 
-The python module is named *cudrtools* to match the underlying c-library.
-It provides these classes:
+  * CidrBlock - for a single cidr.
+  * CidrBlocks - for collection of cidrs.
+  * CidrTools - convenient DNS lookup (forward and reverse).
 
-* CidrBlock - for a single cidr.
-* CidrBlocks - for collection of cidrs.
-* CidrTools - convenient DNS lookup (forward and reverse).
+* Optimized performance
+
+  * Runs complex operations (such as block compacting) at (almost) native C speeds.
+
+* Maintainable 
+
+  * Written in pure Python with CFFI ABI mode — no compilation needed.
+
+* Modern Tooling
+
+  * Managed using by ``uv``, ``meson``, and ``meson-python``.
+
+* Robust Interface
+
+  * Memory handling / garbage collection 
+
+The python module is named *cidrtools* matching the underlying C-library.
+
+
+Recent Changes
+==============
+
+**1.2.0**
+    
+* Sync with cidrtools 1.2.0.
+  Add new CidrBlocks::intersection() which computes the intersecting subnets of two sets
+  of cidr blocks.
 
 Performance Benchmarks
 ======================
 
-The following benchmarks measure the execution time required to process a random sample of **100,000 subnets** and compact them down to **54,941 subnets**.
+Below benchmarks the execution time to process a random sample of *100,000 subnets* and 
+compact them down to *54,941 subnets*.
 
-Compared to native Python architectures, this CFFI implementation achieves a near **80x performance increase**:
+This is significantly faster than a pure Python version built using *ipadress*. 
 
 .. code-block:: text
 
@@ -53,7 +76,7 @@ Installation
 ============
 
 The package is available in the Arch linux AUR using the PKGBUILD provided in the *packaging* 
-directory. It can also be used locally directly from the git repo.. 
+directory. It can also be used locally directly from the git repo. 
 
 It can also be installed locally using the the provided scripts:
 

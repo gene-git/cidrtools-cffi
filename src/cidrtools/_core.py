@@ -44,6 +44,7 @@ ffi.cdef("""
     bool ct_cidr_contains_cidr(const CtCidr *parent, const CtCidr *target);
     int ct_cidr_fix_host_bits(CtCidr *cidr);
     bool ct_cidr_is_subnet(const CtCidr *cidr, const CtCidrs *cidrs);
+    int ct_cidrs_intersection(CtCidrs *cidrs1, CtCidrs *cidrs2, CtCidrs *cidrs);
     int ct_cidr_to_range(const CtCidr *cidr, CtAddress *first, CtAddress *last);
     int ct_cidr_to_range_mid(const CtCidr *cidr, CtAddress *first, CtAddress *mid, CtAddress *last);
     char *ct_cidr_to_str(const CtCidr *cidr);
@@ -59,6 +60,7 @@ ffi.cdef("""
     int ct_range_to_cidrs(const CtAddress *first, const CtAddress *last, CtCidrs *cidrs);
     int ct_cidr_set_prefix(CtCidr *cidr, uint8_t prefix);
     int ct_sort(CtCidrs *cidrs);
+    int ct_cidr_sort_compare(const void *a, const void *b);
     int ct_str_to_cidr_block(const char *str, CtCidr *cidr);
     CtCidrs *ct_subnets_split(const CtCidr *cidr, uint8_t prefix);
     char *ct_version(void);

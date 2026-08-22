@@ -6,14 +6,24 @@ Tags
 
 .. code-block:: text
 
-	1.0.0 (2026-08-20) -> 1.0.4 (2026-08-20)
-	8 commits.
+	1.0.0 (2026-08-20) -> 1.2.0 (2026-08-22)
+	9 commits.
 
 Commits
 =======
 
 
-* 2026-08-20  : **1.0.4**
+* 2026-08-22  : **1.2.0**
+
+.. code-block:: text
+
+              - **1.2.0**
+            
+                * Sync with cidrtools 1.2.0.
+                  Add new CidrBlocks::intersection() which computes the intersecting subnets of two sets
+                  of cidr blocks.
+
+* 2026-08-20  : **1.0.4, origin/master**
 
 .. code-block:: text
 

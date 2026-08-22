@@ -143,10 +143,10 @@ class CidrBlock():
         if res_ptr == ffi.NULL:
             raise RuntimeError("Invalid partition request boundaries.")
 
-        collection = CidrBlocks()
+        cidrs = CidrBlocks()
         # pylint: disable=protected-access
-        collection._c_data = res_ptr
-        return collection
+        cidrs._c_data = res_ptr
+        return cidrs
 
     def get_host_bits(self) -> str:
         """
@@ -390,6 +390,18 @@ class CidrBlocks():
         # Split back into a list of cidr strings.
         #
         return flat_string.split(',')
+
+    def intersection(self, cidrs: CidrBlocks, intersection: CidrBlocks) -> int:
+        """
+        Computes the intersecting subnets with another set of cidrs.
+
+        :param cidrs: The subnets to use to get the intersection.
+        :paramm intersection: The resulting intersecting subnets.
+        :returns: the integer return code from c-library.
+        """
+        # pylint: disable=protected-access
+        rc = lib.ct_cidrs_intersection(self._c_data, cidrs._c_data, intersection._c_data)
+        return rc
 
     def __len__(self) -> int:
         return int(self._c_data.count)

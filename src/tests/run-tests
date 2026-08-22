@@ -12,4 +12,5 @@ export PYTHONPATH="$dest"
     test_class_cidrtools.py \
     test_wrapper_2.py \
     test_wrapper_3.py \
-    test_wrapper_4.py
+    test_wrapper_4.py \
+    test_intersection.py
