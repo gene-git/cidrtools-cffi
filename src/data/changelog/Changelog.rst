@@ -6,14 +6,24 @@ Tags
 
 .. code-block:: text
 
-	1.0.0 (2026-08-20) -> 1.2.0 (2026-08-22)
-	9 commits.
+	1.0.0 (2026-08-20) -> 1.4.0 (2026-08-25)
+	10 commits.
 
 Commits
 =======
 
 
-* 2026-08-22  : **1.2.0**
+* 2026-08-25  : **1.4.0**
+
+.. code-block:: text
+
+              - **1.4.0**
+            
+                * Sync with cidrtools 1.4.0
+            
+                  New ct_str_to_cidr_block_limit(), ct_is_ipv4_or_ipv6()
+
+* 2026-08-22  : **1.2.0, origin/master**
 
 .. code-block:: text
 
@@ -23,7 +33,7 @@ Commits
                   Add new CidrBlocks::intersection() which computes the intersecting subnets of two sets
                   of cidr blocks.
 
-* 2026-08-20  : **1.0.4, origin/master**
+* 2026-08-20  : **1.0.4**
 
 .. code-block:: text
 

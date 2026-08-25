@@ -56,12 +56,14 @@ ffi.cdef("""
     int ct_get_host_bits(const CtCidr *cidr, CtAddress *addr);
     bool ct_is_ipv4(const CtCidr *cidr);
     bool ct_is_ipv6(const CtCidr *cidr);
+    bool ct_is_ipv4_or_ipv6(const CtCidr *cidr);
     size_t ct_num_ips(const CtCidr *cidr);
     int ct_range_to_cidrs(const CtAddress *first, const CtAddress *last, CtCidrs *cidrs);
     int ct_cidr_set_prefix(CtCidr *cidr, uint8_t prefix);
     int ct_sort(CtCidrs *cidrs);
     int ct_cidr_sort_compare(const void *a, const void *b);
     int ct_str_to_cidr_block(const char *str, CtCidr *cidr);
+    int ct_str_to_cidr_block_limit(const char *str, CtCidr *cidr, size_t prefix_min);
     CtCidrs *ct_subnets_split(const CtCidr *cidr, uint8_t prefix);
     char *ct_version(void);
     int ct_split_by_family(CtCidrs *cidrs, CtCidrs *cidrs_v4, CtCidrs *cidrs_v6);

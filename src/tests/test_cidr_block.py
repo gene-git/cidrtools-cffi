@@ -19,10 +19,10 @@ def test_cidr_block_creation():
 
 def test_cidr_block_invalid_creation():
     """
-    Confirm an invalid cidr triggers a ValueError.
+    Confirm an invalid cidr gets mapped to 0.0.0.0/32
     """
-    with pytest.raises(ValueError, match="Invalid CIDR block string"):
-        CidrBlock("999.999.999.999/99")
+    cidr = CidrBlock("999.999.999.999/99")
+    assert cidr.to_string() == ''
 
 
 @pytest.mark.parametrize("cidr, expected_v4, expected_v6", [

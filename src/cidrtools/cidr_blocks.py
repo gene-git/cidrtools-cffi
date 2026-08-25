@@ -19,6 +19,7 @@ from .ct_str_to_cidr_block import ct_str_to_cidr_block
 from .ct_cidr_to_str import ct_cidr_to_str
 from .ct_is_ipv4 import ct_is_ipv4
 from .ct_is_ipv6 import ct_is_ipv6
+from .ct_is_ipv4_or_ipv6 import ct_is_ipv4_or_ipv6
 from .ct_num_ips import ct_num_ips
 from .ct_format_host_bits import ct_format_host_bits
 from .ct_cidr_contains_cidr import ct_cidr_contains_cidr
@@ -58,10 +59,15 @@ class CidrBlock():
         :raises ValueError: If the string is not a valis cidr.
         """
         self._raw_input_str: str = cidr_str
+        self.bad_cidr_str: bool = False
         self._c_data: Any = ffi.new("CtCidr *")
+
+        # 0 = success, -2 = bad cidr -> 0.0.0.0/32, -1 = error condition
         rc = ct_str_to_cidr_block(cidr_str, self._c_data)
-        if rc != 0:
-            raise ValueError(f"Invalid CIDR block string : '{cidr_str}'")
+        if rc == -1:
+            raise ValueError(f"Error in CIDR block initialize : '{cidr_str}'")
+        if rc == -2:
+            self.bad_cidr_str = True
 
     @property
     def is_ipv4(self) -> bool:
@@ -70,6 +76,8 @@ class CidrBlock():
 
         :return: True if the network family is IPv4, False otherwise.
         """
+        if self.bad_cidr_str:
+            return False
         return bool(ct_is_ipv4(self._c_data))
 
     @property
@@ -79,7 +87,20 @@ class CidrBlock():
 
         :return: True if the network family is IPv6, False otherwise.
         """
+        if self.bad_cidr_str:
+            return False
         return bool(ct_is_ipv6(self._c_data))
+
+    @property
+    def is_ipv4_or_ipv6(self) -> bool:
+        """
+        Returns True if the cidr block is an IPv6 network family.
+
+        :return: True if the network family is IPv6, False otherwise.
+        """
+        if self.bad_cidr_str:
+            return False
+        return bool(ct_is_ipv4_or_ipv6(self._c_data))
 
     @property
     def num_ips(self) -> int:
@@ -100,6 +121,8 @@ class CidrBlock():
         """
         Modifies the network prefix to be the new value.
         """
+        if self.bad_cidr_str:
+            self.bad_cidr_str = False
         if not 0 <= prefix <= (32 if self.is_ipv4 else 128):
             raise ValueError("Prefix size limits bound by protocol rules.")
         return int(lib.ct_cidr_set_prefix(self._c_data, prefix))
@@ -200,6 +223,8 @@ class CidrBlock():
 
         # Ignore the return code - keep the ip and prefix
         _, ip_str, prefix = ct_str_to_cidr_parts(cidr_str)
+        if self.bad_cidr_str:
+            ip_str = ""
         return (ip_str, prefix)
 
     def increment_by(self, steps: int) -> str:
@@ -229,9 +254,13 @@ class CidrBlock():
         """
         Return the cidr string. Same as str(self)
         """
+        if self.bad_cidr_str:
+            return ''
         return ct_cidr_to_str(self._c_data)
 
     def __str__(self) -> str:
+        if self.bad_cidr_str:
+            return ''
         return ct_cidr_to_str(self._c_data)
 
     def __repr__(self) -> str:
@@ -241,7 +270,7 @@ class CidrBlock():
         """
         Clean up invalid cidr blocks (prefix, host bits being set)
 
-        :return: Treu on success oterhwise False
+        :return: True on success otherwise False
         """
         status = bool(ct_clean_cidr(self._c_data) == 0)
         return status

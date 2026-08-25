@@ -29,6 +29,7 @@ py.install_sources(
   'ct_ip_str_to_hostname.py',
   'ct_is_ipv4.py',
   'ct_is_ipv6.py',
+  'ct_is_ipv4_or_ipv6.py',
   'ct_num_ips.py',
   'ct_range_to_cidrs.py',
   'ct_sort.py',

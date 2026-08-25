@@ -12,3 +12,11 @@ def ct_str_to_cidr_block(ip_str: str, cidr_ptr) -> int:
     """
     c_str = ffi.new("char[]", ip_str.encode('utf-8'))
     return lib.ct_str_to_cidr_block(c_str, cidr_ptr)
+
+
+def ct_str_to_cidr_block_limit(ip_str: str, cidr_ptr, prefix_min: int) -> int:
+    """
+    Wrap the correspnding cidrtools library function.
+    """
+    c_str = ffi.new("char[]", ip_str.encode('utf-8'))
+    return lib.ct_str_to_cidr_block_limit(c_str, cidr_ptr, prefix_min)

@@ -44,6 +44,11 @@ The python module is named *cidrtools* matching the underlying C-library.
 
 Recent Changes
 ==============
+**1.4.0**
+
+* Sync with cidrtools 1.4.0
+
+  New ct_str_to_cidr_block_limit(), ct_is_ipv4_or_ipv6()
 
 **1.2.0**
     
