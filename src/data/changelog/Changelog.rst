@@ -6,14 +6,24 @@ Tags
 
 .. code-block:: text
 
-	1.0.0 (2026-08-20) -> 1.4.0 (2026-08-25)
-	10 commits.
+	1.0.0 (2026-08-20) -> 1.4.1 (2026-09-04)
+	12 commits.
 
 Commits
 =======
 
 
-* 2026-08-25  : **1.4.0**
+* 2026-09-04  : **1.4.1**
+
+.. code-block:: text
+
+              - **1.4.1**
+            
+                * Drop unused uv/pyproject.toml (meson does it all)
+                * Add .gitattributes
+              - .gitattributes
+
+* 2026-08-25  : **1.4.0, origin/master**
 
 .. code-block:: text
 
@@ -23,7 +33,7 @@ Commits
             
                   New ct_str_to_cidr_block_limit(), ct_is_ipv4_or_ipv6()
 
-* 2026-08-22  : **1.2.0, origin/master**
+* 2026-08-22  : **1.2.0**
 
 .. code-block:: text
 

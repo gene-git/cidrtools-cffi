@@ -44,6 +44,7 @@ The python module is named *cidrtools* matching the underlying C-library.
 
 Recent Changes
 ==============
+
 **1.4.1**
 
 * Drop unused uv/pyproject.toml (meson does it all)
