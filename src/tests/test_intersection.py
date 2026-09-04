@@ -27,4 +27,3 @@ def test_intersection():
     assert len(cidrs_str) == len(inters_str)
     assert cidrs_str == inters_str
     assert cidrs_str == inters_str
-

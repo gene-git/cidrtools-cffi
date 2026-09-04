@@ -28,8 +28,6 @@ makedepends=(
     'git'
     'meson'
     'meson-python'
-    'uv'
-    'python-uv-build'
     'rsync'
 )
 checkdepends=(

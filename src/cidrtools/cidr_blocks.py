@@ -32,7 +32,7 @@ from .ct_clean_cidr import ct_clean_cidr
 # C-library wrapper functions
 # cidr blocks
 #
-from .ct_allocate_cidrs import ct_allocate_cidrs
+# from .ct_allocate_cidrs import ct_allocate_cidrs
 from .ct_add_cidr_to_cidrs import ct_add_cidr_to_cidrs
 from .ct_free_cidrs import ct_free_cidrs
 from .ct_compact import ct_compact
