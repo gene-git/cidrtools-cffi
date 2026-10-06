@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # SPDX-FileCopyrightText: © 2026-present Gene C <arch@sapience.com>
 """
-cidrtoolls-cffi package provides:
-  cidrtools module:
+cidrtoolls-cffi provides the cidrtools module using the fast C-code cidrtools library:
+
   - public class/member functions
   - wrapper function for each cidrtool ct_xx function.
 """

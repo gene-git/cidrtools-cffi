@@ -6,12 +6,27 @@ Tags
 
 .. code-block:: text
 
-	1.0.0 (2026-08-20) -> 1.4.1 (2026-09-04)
-	12 commits.
+	1.0.0 (2026-08-20) -> 1.4.2 (2026-10-06)
+	14 commits.
 
 Commits
 =======
 
+
+* 2026-10-06  : **1.4.2**
+
+.. code-block:: text
+
+              - **1.4.2**
+            
+                * Documentation
+            
+                    * Docs now available at https://cidrtools-cffi.readthedocs.io
+ 2026-09-07   ⋯
+
+.. code-block:: text
+
+              - add link to manual at top level
 
 * 2026-09-04  : **1.4.1**
 
@@ -23,7 +38,7 @@ Commits
                 * Add .gitattributes
               - .gitattributes
 
-* 2026-08-25  : **1.4.0, origin/master**
+* 2026-08-25  : **1.4.0**
 
 .. code-block:: text
 

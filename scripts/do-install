@@ -6,8 +6,8 @@
 # e.g. Call from PKGBUILD:  
 #   ./do-install ${pkgdir}
 #
-# gene c
-#
+set -euo pipefail
+
 if (( $# < 1 )) ; then
     dest="./build/pkg"
 else
@@ -15,7 +15,6 @@ else
 fi
 dest=$(realpath "$dest")
 
-echo "************************ INSTALL ************************"
 /usr/bin/meson install -C build/release --destdir "$dest" > /dev/null
 
 exit 0

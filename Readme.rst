@@ -2,6 +2,9 @@
 cidrtools-cffi
 ===============
 
+Overview
+========
+
 Python CFFI bindings for the high-performance `cidrtools <https://github.com/gene-git/cidrtools>`_
 C library. 
 
@@ -13,6 +16,14 @@ well as `Arch AUR <https://aur.archlinux.org/packages/py-cidr>`_
 
 This package exposes the complete ``cidrtools`` API. It provides an fast bridge to the underlying 
 C structures and all the functions in the shared library.
+
+Documentation
+-------------
+
+The manual provides detailed information and is available in both HTML and PDF formats.
+Both are installed under */usr/share/cidrtools/docs*.
+
+The manual is also available at: `readthedocs <https://cidrtools-cffi.readthedocs.io>`_.
 
 Features
 ========

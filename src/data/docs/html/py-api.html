@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. API Reference &mdash; cidrtools-cffi 1.4.1
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=29180f0f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=350a9c04"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Appendix" href="Appendix.html" />
+    <link rel="prev" title="1. cidrtools-cffi" href="Readme.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            cidrtools-cffi
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Readme.html">1. cidrtools-cffi</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cidrtools">2.1. class cidrtools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cidrtools.CidrBlock"><code class="docutils literal notranslate"><span class="pre">CidrBlock</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.cidr_parts"><code class="docutils literal notranslate"><span class="pre">CidrBlock.cidr_parts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.clean"><code class="docutils literal notranslate"><span class="pre">CidrBlock.clean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.fix_host_bits"><code class="docutils literal notranslate"><span class="pre">CidrBlock.fix_host_bits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.format_host_bits"><code class="docutils literal notranslate"><span class="pre">CidrBlock.format_host_bits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.get_host_bits"><code class="docutils literal notranslate"><span class="pre">CidrBlock.get_host_bits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.increment_by"><code class="docutils literal notranslate"><span class="pre">CidrBlock.increment_by()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.is_ipv4"><code class="docutils literal notranslate"><span class="pre">CidrBlock.is_ipv4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.is_ipv4_or_ipv6"><code class="docutils literal notranslate"><span class="pre">CidrBlock.is_ipv4_or_ipv6</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.is_ipv6"><code class="docutils literal notranslate"><span class="pre">CidrBlock.is_ipv6</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.is_subnet_of"><code class="docutils literal notranslate"><span class="pre">CidrBlock.is_subnet_of()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.num_ips"><code class="docutils literal notranslate"><span class="pre">CidrBlock.num_ips</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.set_prefix"><code class="docutils literal notranslate"><span class="pre">CidrBlock.set_prefix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.split"><code class="docutils literal notranslate"><span class="pre">CidrBlock.split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.to_range"><code class="docutils literal notranslate"><span class="pre">CidrBlock.to_range()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.to_range_mid"><code class="docutils literal notranslate"><span class="pre">CidrBlock.to_range_mid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlock.to_string"><code class="docutils literal notranslate"><span class="pre">CidrBlock.to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cidrtools.CidrBlocks"><code class="docutils literal notranslate"><span class="pre">CidrBlocks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.add"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.clean"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.clean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.compact"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.compact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.exclude"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.exclude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.intersection"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.sort"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.sort()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.split_by_family"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.split_by_family()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrBlocks.to_strings"><code class="docutils literal notranslate"><span class="pre">CidrBlocks.to_strings()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cidrtools.CidrTools"><code class="docutils literal notranslate"><span class="pre">CidrTools</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrTools.ct_version"><code class="docutils literal notranslate"><span class="pre">CidrTools.ct_version()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrTools.hostname_to_addresses"><code class="docutils literal notranslate"><span class="pre">CidrTools.hostname_to_addresses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrTools.ip_str_to_hostname"><code class="docutils literal notranslate"><span class="pre">CidrTools.ip_str_to_hostname()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cidrtools.CidrTools.range_to_cidrs"><code class="docutils literal notranslate"><span class="pre">CidrTools.range_to_cidrs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix.html">3. Appendix</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cidrtools-cffi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/py-api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-reference">
+<span id="api"></span><h1><span class="section-number">2. </span>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
+<p>This section contains the API documentation for the <code class="docutils literal notranslate"><span class="pre">cidrtools</span></code> package.</p>
+<section id="module-cidrtools">
+<span id="class-cidrtools"></span><h2><span class="section-number">2.1. </span>class cidrtools<a class="headerlink" href="#module-cidrtools" title="Link to this heading"></a></h2>
+<p>cidrtoolls-cffi provides the cidrtools module using the fast C-code cidrtools library:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>public class/member functions</p></li>
+<li><p>wrapper function for each cidrtool ct_xx function.</p></li>
+</ul>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">cidrtools.</span></span><span class="sig-name descname"><span class="pre">CidrBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cidr_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cidrtools.CidrBlock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to manage one cidr block.
+Uses cidrtools C-library CtCidrBlock structure.</p>
+<p>Handles memory allocation, type inspections, range mapping,
+and contains (is-subnet).</p>
+<p>Built on the cidrtools library.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.cidr_parts">
+<span class="sig-name descname"><span class="pre">cidr_parts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.cidr_parts" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Returns the IP address and prefix as a tuple.</dt><dd><ul class="simple">
+<li><p>(ip_address: str, prefix: int)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean up invalid cidr blocks (prefix, host bits being set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success otherwise False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.fix_host_bits">
+<span class="sig-name descname"><span class="pre">fix_host_bits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.fix_host_bits" title="Link to this definition"></a></dt>
+<dd><p>Cleans up cidr with host bits set, by setting all host bits to zero.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.format_host_bits">
+<span class="sig-name descname"><span class="pre">format_host_bits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.format_host_bits" title="Link to this definition"></a></dt>
+<dd><p>Returns a formatted “address” string of the host bits
+Identical to get_host_bits() -</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.get_host_bits">
+<span class="sig-name descname"><span class="pre">get_host_bits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.get_host_bits" title="Link to this definition"></a></dt>
+<dd><p>Extracts the underlying address portion - these are thr bits past the
+network bits defined by the prefix length.</p>
+<p>&lt;prefix length of network-bits … &gt;&lt;host-bits&gt;</p>
+<p>E.g. 10.2.2.3/24 =&gt; 0.0.0.3
+Note that the host bits are tracked internally but the cidr is always “fixed”
+Example:
+- cidr = CidrBlock(“192.168.1.22/24”)
+- str(cidr) –&gt; “192.168.1.0/24”
+- cidr.get_host_bits() –&gt; “0.0.0.22”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.increment_by">
+<span class="sig-name descname"><span class="pre">increment_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.increment_by" title="Link to this definition"></a></dt>
+<dd><p>Find a new network address advanced by ‘steps’ IP addresses.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.is_ipv4">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_ipv4</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#cidrtools.CidrBlock.is_ipv4" title="Link to this definition"></a></dt>
+<dd><p>Returns True if the cidr block is an IPv4 network family</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the network family is IPv4, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.is_ipv4_or_ipv6">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_ipv4_or_ipv6</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#cidrtools.CidrBlock.is_ipv4_or_ipv6" title="Link to this definition"></a></dt>
+<dd><p>Returns True if the cidr block is an IPv6 network family.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the network family is IPv6, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.is_ipv6">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_ipv6</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#cidrtools.CidrBlock.is_ipv6" title="Link to this definition"></a></dt>
+<dd><p>Returns True if the cidr block is an IPv6 network family.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the network family is IPv6, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.is_subnet_of">
+<span class="sig-name descname"><span class="pre">is_subnet_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cidrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.is_subnet_of" title="Link to this definition"></a></dt>
+<dd><p>Checks if this block is a subnet of any of the collection of cidrs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.num_ips">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">num_ips</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#cidrtools.CidrBlock.num_ips" title="Link to this definition"></a></dt>
+<dd><p>Returns the total number of IPs inside this cidr block.</p>
+<p>Note that for IPv6 this is capped at 64 bit interger max.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.set_prefix">
+<span class="sig-name descname"><span class="pre">set_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.set_prefix" title="Link to this definition"></a></dt>
+<dd><p>Modifies the network prefix to be the new value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></span><a class="headerlink" href="#cidrtools.CidrBlock.split" title="Link to this definition"></a></dt>
+<dd><p>Splits the cidr block into a collection of smaller subnets using the provided prefix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.to_range">
+<span class="sig-name descname"><span class="pre">to_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.to_range" title="Link to this definition"></a></dt>
+<dd><p>Computes the first and last IP addresses of this cidr block.
+See allso to_range_mid()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.to_range_mid">
+<span class="sig-name descname"><span class="pre">to_range_mid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.to_range_mid" title="Link to this definition"></a></dt>
+<dd><p>Compute the first, middle and last IP addresses of this cidr block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlock.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrBlock.to_string" title="Link to this definition"></a></dt>
+<dd><p>Return the cidr string. Same as str(self)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">cidrtools.</span></span><span class="sig-name descname"><span class="pre">CidrBlocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_cidrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cidrtools.CidrBlocks" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An ordered list of CtCidrs</p>
+<p>A list of cidr blocks.  Supports a variety of operations
+via the member functions such as:
+- compacting
+- filtering (excluding),
+- slicing,
+- cleaning.</p>
+<p>Built on the cidrtools library.  Manages memory allocations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cidr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#cidrtools.CidrBlock" title="cidrtools.cidr_blocks.CidrBlock"><span class="pre">CidrBlock</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.add" title="Link to this definition"></a></dt>
+<dd><p>Appends a CIDR block to the collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cidr</strong> – The cidr block (object or raw string) to add.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the append succeeded else false.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean any invalid cidr blocks (prefix, host bits being set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if success else False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.compact">
+<span class="sig-name descname"><span class="pre">compact</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.compact" title="Link to this definition"></a></dt>
+<dd><p>Compress the list of cidrs to the mimimal number of subnets.</p>
+<p>This combines adjacent or overlapping subnets to make the
+smallest number of subnets. This is done in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Return status code from the underlying C function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.exclude">
+<span class="sig-name descname"><span class="pre">exclude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excluded_cidrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.exclude" title="Link to this definition"></a></dt>
+<dd><p>Exclude a set of cidr blocks. This is done place.</p>
+<p>new cidrs =&gt;  cidrs - excluded_cidrs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>excluded_cidrs</strong> – The cidrs to be excluded.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return status code of the underlying C library.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.intersection">
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cidrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.intersection" title="Link to this definition"></a></dt>
+<dd><p>Computes the intersecting subnets with another set of cidrs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cidrs</strong> – The subnets to use to get the intersection.</p>
+</dd>
+<dt class="field-even">Paramm intersection<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting intersecting subnets.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the integer return code from c-library.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.sort" title="Link to this definition"></a></dt>
+<dd><p>In-place sort of the cidr blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Return status code from the underlying C library</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.split_by_family">
+<span class="sig-name descname"><span class="pre">split_by_family</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.split_by_family" title="Link to this definition"></a></dt>
+<dd><p>Splits the cidr blocks into separate IPv4 and IPv6 lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of cidr lists - (IPv4_Pool, IPv6_Pool).</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If errors found by C-library</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrBlocks.to_strings">
+<span class="sig-name descname"><span class="pre">to_strings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cidrtools.CidrBlocks.to_strings" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of cidr strings.
+Optimized for speed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cidrtools.CidrTools">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">cidrtools.</span></span><span class="sig-name descname"><span class="pre">CidrTools</span></span><a class="headerlink" href="#cidrtools.CidrTools" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class with some additional member functions of the <em>cidrtools</em> library.</p>
+<p>Underlying cidrtools version and some DNS convenience functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrTools.ct_version">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ct_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrTools.ct_version" title="Link to this definition"></a></dt>
+<dd><p>Returns the native C library version target compilation string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The loaded library system release semantic tag value.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrTools.hostname_to_addresses">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">hostname_to_addresses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></span><a class="headerlink" href="#cidrtools.CidrTools.hostname_to_addresses" title="Link to this definition"></a></dt>
+<dd><p>Resolves a hostname string into a structured collection of CIDR blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hostname</strong> (<em>str</em>) – The explicit domain URL path target string to resolve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A fresh collection array tracking resolved system addresses blocks.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.CidrBlocks">CidrBlocks</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If standard resolution paths fail or return unexpected status flags.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrTools.ip_str_to_hostname">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ip_str_to_hostname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cidrtools.CidrTools.ip_str_to_hostname" title="Link to this definition"></a></dt>
+<dd><p>Performs a reverse DNS lookup mapping an active IP address string back to a hostname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ip_str</strong> (<em>str</em>) – The textual raw representation layout of the target lookup address.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The fully qualified resolved host identifier name string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If reverse lookup actions time out or tracking channels fail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cidrtools.CidrTools.range_to_cidrs">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">range_to_cidrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_ip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_ip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#cidrtools.CidrBlocks" title="cidrtools.cidr_blocks.CidrBlocks"><span class="pre">CidrBlocks</span></a></span></span><a class="headerlink" href="#cidrtools.CidrTools.range_to_cidrs" title="Link to this definition"></a></dt>
+<dd><p>Converts an IP range to a minimal collection of CIDR blocks.</p>
+<p>Should this be moved to CidrBlocks.range_to_cidrs() ?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first_ip</strong> – The fist network IP of the rangw</p></li>
+<li><p><strong>last_ip</strong> – The last IP of the range</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A minimal representation tracking collection of matched network blocks.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If input strings map incorrectly to standard protocol types.</p></li>
+<li><p><strong>RuntimeError</strong> – If underlying C matrix calculations encounter configuration faults.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Readme.html" class="btn btn-neutral float-left" title="1. cidrtools-cffi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Appendix.html" class="btn btn-neutral float-right" title="3. Appendix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

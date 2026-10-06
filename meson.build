@@ -46,6 +46,15 @@ install_data(
   install_dir: d_share / 'cidrtools-cffi'
 )
 
+install_subdir(
+  [
+    s_docs / 'html',
+  ],
+  install_dir: d_share / 'cidrtools-cffi/docs',
+  strip_directory: false
+)
+
+
 install_data(
   [
     s_license / 'License-gpl-2.0.txt',
@@ -61,4 +70,12 @@ install_data(
   ],
   install_dir: d_share / 'licenses/cidrtools-cffi'
 )
+
+#
+# Testing
+#
+proj_root = meson.project_source_root()
+srcdir = proj_root / 'src'
+testdir = srcdir / 'tests'
+pytest = find_program('pytest')
 

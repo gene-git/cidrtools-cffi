@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. cidrtools-cffi &mdash; cidrtools-cffi 1.4.1
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=29180f0f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=350a9c04"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. API Reference" href="py-api.html" />
+    <link rel="prev" title="Cidrtools CFFI Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            cidrtools-cffi
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. cidrtools-cffi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">1.1. Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">1.1.1. Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#features">1.2. Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recent-changes">1.3. Recent Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-benchmarks">1.4. Performance Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">1.5. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-example">1.6. Usage Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#high-level-api">1.6.1. High-Level API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#api-reference">1.7. API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ai-tooling">1.8. AI Tooling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="py-api.html">2. API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix.html">3. Appendix</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cidrtools-cffi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>cidrtools-cffi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Readme.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cidrtools-cffi">
+<h1><span class="section-number">1. </span>cidrtools-cffi<a class="headerlink" href="#cidrtools-cffi" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2><span class="section-number">1.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Python CFFI bindings for the high-performance <a class="reference external" href="https://github.com/gene-git/cidrtools">cidrtools</a>
+C library.</p>
+<p>This module provides a suite of tools to examine and manipulate
+network cidr blocks. It has the same functionality as the <em>cidrtools</em> library.</p>
+<p>The source is available in <a class="reference external" href="https://github.com/gene-git/cidrtools-cffi">Github cidrtools-cffi</a> as
+well as <a class="reference external" href="https://aur.archlinux.org/packages/py-cidr">Arch AUR</a></p>
+<p>This package exposes the complete <code class="docutils literal notranslate"><span class="pre">cidrtools</span></code> API. It provides an fast bridge to the underlying
+C structures and all the functions in the shared library.</p>
+<section id="documentation">
+<h3><span class="section-number">1.1.1. </span>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h3>
+<p>The manual provides detailed information and is available in both HTML and PDF formats.
+Both are installed under <em>/usr/share/cidrtools/docs</em>.</p>
+<p>The manual is also available at: <a class="reference external" href="https://cidrtools-cffi.readthedocs.io">readthedocs</a>.</p>
+</section>
+</section>
+<section id="features">
+<h2><span class="section-number">1.2. </span>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Wraps C-library into 3 Python classes.</p>
+<ul>
+<li><p>CidrBlock - for a single cidr.</p></li>
+<li><p>CidrBlocks - for collection of cidrs.</p></li>
+<li><p>CidrTools - convenient DNS lookup (forward and reverse).</p></li>
+</ul>
+</li>
+<li><p>Optimized performance</p>
+<ul>
+<li><p>Runs complex operations (such as block compacting) at (almost) native C speeds.</p></li>
+</ul>
+</li>
+<li><p>Maintainable</p>
+<ul>
+<li><p>Written in pure Python with CFFI ABI mode — no compilation needed.</p></li>
+</ul>
+</li>
+<li><p>Modern Tooling</p>
+<ul>
+<li><p>Managed using by <code class="docutils literal notranslate"><span class="pre">uv</span></code>, <code class="docutils literal notranslate"><span class="pre">meson</span></code>, and <code class="docutils literal notranslate"><span class="pre">meson-python</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Robust Interface</p>
+<ul>
+<li><p>Memory handling / garbage collection</p></li>
+</ul>
+</li>
+</ul>
+<p>The python module is named <em>cidrtools</em> matching the underlying C-library.</p>
+</section>
+<section id="recent-changes">
+<h2><span class="section-number">1.3. </span>Recent Changes<a class="headerlink" href="#recent-changes" title="Link to this heading"></a></h2>
+<p><strong>1.4.1</strong></p>
+<ul class="simple">
+<li><p>Drop unused uv/pyproject.toml (meson does it all)</p></li>
+<li><p>Add .gitattributes</p></li>
+</ul>
+<p><strong>1.4.0</strong></p>
+<ul>
+<li><p>Sync with cidrtools 1.4.0</p>
+<p>New ct_str_to_cidr_block_limit(), ct_is_ipv4_or_ipv6()</p>
+</li>
+</ul>
+</section>
+<section id="performance-benchmarks">
+<h2><span class="section-number">1.4. </span>Performance Benchmarks<a class="headerlink" href="#performance-benchmarks" title="Link to this heading"></a></h2>
+<p>Below benchmarks the execution time to process a random sample of <em>100,000 subnets</em> and
+compact them down to <em>54,941 subnets</em>.</p>
+<p>This is significantly faster than a pure Python version built using <em>ipadress</em>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Version Used            Seconds        Relative
+-------------------     --------       --------
+(a) Raw C-Code          0.011892861     1.0 x
+(b) CFFI Wrapper        0.011995342     1.0 x
+(c) Cython/C Bridge     0.021802806     1.8 x
+(d) Pure Cython         0.026872699     2.3 x
+(e) Pure Python         0.935538276    78.7 x
+
+*100,000 subnets compacted to 54,941 subnets
+</pre></div>
+</div>
+</section>
+<section id="installation">
+<h2><span class="section-number">1.5. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>The package is available in the Arch linux AUR using the PKGBUILD provided in the <em>packaging</em>
+directory. It can also be used locally directly from the git repo.</p>
+<p>It can also be installed locally using the the provided scripts:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/do-build
+./scripts/do-install
+./scripts/run-tests
+</pre></div>
+</div>
+<p>The default install directory is <em>build/pkg</em>, but <em>do-install</em> takes the destination directory
+as an argument as well.</p>
+</section>
+<section id="usage-example">
+<h2><span class="section-number">1.6. </span>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
+<section id="high-level-api">
+<h3><span class="section-number">1.6.1. </span>High-Level API<a class="headerlink" href="#high-level-api" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cidrtools</span><span class="w"> </span><span class="kn">import</span> <span class="n">CidrBlock</span><span class="p">,</span> <span class="n">CidrBlocks</span>
+
+<span class="c1"># Instantiating one cidr block from a string.</span>
+<span class="n">cidr</span> <span class="o">=</span> <span class="n">CidrBlock</span><span class="p">(</span><span class="s2">"192.168.1.0/24"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"IPs within network: </span><span class="si">{</span><span class="n">cidr</span><span class="o">.</span><span class="n">num_ips</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Check if ip or cidr is in the cidr subnet.</span>
+<span class="n">ip_str</span> <span class="o">=</span> <span class="s2">"192.168.1.50"</span>
+<span class="n">is_in</span> <span class="o">=</span> <span class="s2">"is"</span> <span class="k">if</span> <span class="p">(</span><span class="n">ip_str</span> <span class="ow">in</span> <span class="n">cidr</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"is not"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' </span><span class="si">{</span><span class="n">ip_str</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">is_in</span><span class="si">}</span><span class="s1"> in </span><span class="si">{</span><span class="n">cidr</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="c1"># Similarly</span>
+<span class="n">subcidr</span> <span class="o">=</span> <span class="n">CidrBlock</span><span class="p">(</span><span class="s2">"192.168.1.50"</span><span class="p">)</span>
+<span class="n">subcidr</span> <span class="ow">in</span> <span class="n">cidr</span>
+<span class="o">=&gt;</span> <span class="kc">True</span>
+
+<span class="o">=&gt;</span> <span class="mf">192.168.1.50</span> <span class="ow">is</span> <span class="ow">in</span> <span class="mf">192.168.1.0</span><span class="o">/</span><span class="mi">24</span>
+
+<span class="n">cidrs</span> <span class="o">=</span> <span class="n">CidrBlocks</span><span class="p">([</span><span class="s2">"192.168.1.0/23"</span><span class="p">,</span> <span class="s2">"10.0.0.0/24"</span><span class="p">])</span>
+<span class="n">is_subnet</span> <span class="o">=</span> <span class="s2">"is"</span> <span class="k">if</span> <span class="n">cidr</span><span class="o">.</span><span class="n">is_subnet_of</span><span class="p">(</span><span class="n">cidrs</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"is not"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">cidr</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">is_subnet</span><span class="si">}</span><span class="s1"> a subnet of </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">cidrs</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="mf">192.168.1.0</span><span class="o">/</span><span class="mi">24</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">subnet</span> <span class="n">of</span> <span class="p">[</span><span class="s1">'192.168.0.0/23'</span><span class="p">,</span> <span class="s1">'10.0.0.0/24'</span><span class="p">]</span>
+
+<span class="n">cidrs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">'10.0.2.0/24'</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">cidrs</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'192.168.0.0/23'</span><span class="p">,</span> <span class="s1">'10.0.0.0/24'</span><span class="p">,</span> <span class="s1">'10.0.2.0/24'</span><span class="p">]</span>
+
+<span class="n">cidrs</span><span class="o">.</span><span class="n">compact</span><span class="p">()</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">cidrs</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'10.0.0.0/24'</span><span class="p">,</span> <span class="s1">'10.0.2.0/24'</span><span class="p">,</span> <span class="s1">'192.168.0.0/23'</span><span class="p">]</span>
+
+<span class="n">cidrs</span> <span class="o">=</span> <span class="n">CidrCollection</span><span class="p">([</span><span class="s2">"192.168.1.0/25"</span><span class="p">,</span> <span class="s2">"192.168.1.128/25"</span><span class="p">])</span>
+<span class="n">cidrs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">cidrs</span><span class="o">.</span><span class="n">compact</span><span class="p">()</span>
+
+<span class="c1"># back to a standard Python list of strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cidrs</span><span class="p">))</span>  <span class="c1"># Output: ['192.168.1.0/24']</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="api-reference">
+<h2><span class="section-number">1.7. </span>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<p>Documentation is built with Sphinx. The PDF manual is in
+<em>src/data/docs</em> and installed to <em>/usr/share/cidrtools-cffi</em>.</p>
+<p>To create a local copy of the html and PDF documentation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>src/data/docs
+./buld-manual.sh
+</pre></div>
+</div>
+</section>
+<section id="ai-tooling">
+<h2><span class="section-number">1.8. </span>AI Tooling<a class="headerlink" href="#ai-tooling" title="Link to this heading"></a></h2>
+<p>Assisted by:</p>
+<ul class="simple">
+<li><p>Anthropic’s <a class="reference external" href="https://claude.ai">Claude</a></p></li>
+<li><p>Google’s <a class="reference external" href="https://gemini.google.com/">Gemini</a></p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cidrtools CFFI Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="py-api.html" class="btn btn-neutral float-right" title="2. API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

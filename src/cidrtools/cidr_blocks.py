@@ -108,6 +108,8 @@ class CidrBlock():
         Returns the total number of IPs inside this cidr block.
 
         Note that for IPv6 this is capped at 64 bit interger max.
+
+        :returns: Number of IPs in the cidr block.
         """
         return int(ct_num_ips(self._c_data))
 
@@ -120,6 +122,9 @@ class CidrBlock():
     def set_prefix(self, prefix: int) -> int:
         """
         Modifies the network prefix to be the new value.
+
+        :param prefix: The network prefix
+        :returns: The new prefix value
         """
         if self.bad_cidr_str:
             self.bad_cidr_str = False
@@ -130,6 +135,9 @@ class CidrBlock():
     def is_subnet_of(self, cidrs: CidrBlocks) -> bool:
         """
         Checks if this block is a subnet of any of the collection of cidrs.
+
+        :param cidrs: The collection of cidr blocks to check
+        :returns: True of is a subnet else False.
         """
         # pylint: disable=protected-access
         return bool(lib.ct_cidr_is_subnet(self._c_data, cidrs._c_data))
@@ -138,6 +146,8 @@ class CidrBlock():
         """
         Computes the first and last IP addresses of this cidr block.
         See allso to_range_mid()
+
+        :returns: A tuple of (first, last) last IP addresses.
         """
         c_first = ffi.new("CtAddress *")
         c_last = ffi.new("CtAddress *")
@@ -149,6 +159,8 @@ class CidrBlock():
     def to_range_mid(self) -> tuple[str, str, str]:
         """
         Compute the first, middle and last IP addresses of this cidr block.
+
+        :returns: A tuple of (first, middle, last) IP addresses.
         """
         c_first = ffi.new("CtAddress *")
         c_mid = ffi.new("CtAddress *")
@@ -161,6 +173,9 @@ class CidrBlock():
     def split(self, prefix: int) -> CidrBlocks:
         """
         Splits the cidr block into a collection of smaller subnets using the provided prefix.
+
+        :param prefix: The prefix to use to split this cidr.
+        :returns: The collection of subnets that aggregate to this cidr block.
         """
         res_ptr = lib.ct_subnets_split(self._c_data, prefix)
         if res_ptr == ffi.NULL:
@@ -184,13 +199,15 @@ class CidrBlock():
         - cidr = CidrBlock("192.168.1.22/24")
         - str(cidr) --> "192.168.1.0/24"
         - cidr.get_host_bits() --> "0.0.0.22"
+
+        :returns: A string with the network bits set to 0, showing only the host bits.
         """
         return self.format_host_bits()
 
     def format_host_bits(self) -> str:
         """
         Returns a formatted "address" string of the host bits
-        Identical to get_host_bits() -
+        Identical to get_host_bits(). 
         """
         input_str = getattr(self, '_raw_input_str', str(self))
         if not input_str:
@@ -215,7 +232,8 @@ class CidrBlock():
     def cidr_parts(self) -> tuple[str, int]:
         """
         Returns the IP address and prefix as a tuple.
-         - (ip_address: str, prefix: int)
+
+        :returns: The tuple (ip_address, prefix)
         """
         cidr_str = getattr(self, '_raw_input_str', str(self))
         if not cidr_str:
@@ -230,6 +248,9 @@ class CidrBlock():
     def increment_by(self, steps: int) -> str:
         """
         Find a new network address advanced by 'steps' IP addresses.
+
+        :param steps: The number ot steps to add to the IP address 
+        :returns: The new address.
         """
         c_dest = ffi.new("CtAddress *")
         rc = lib.ct_ip_address_increment(ffi.addressof(self._c_data.addr), steps, c_dest)
@@ -253,6 +274,8 @@ class CidrBlock():
     def to_string(self) -> str:
         """
         Return the cidr string. Same as str(self)
+
+        :returns: The string representation of the cidr.
         """
         if self.bad_cidr_str:
             return ''
@@ -396,6 +419,8 @@ class CidrBlocks():
         """
         Returns a list of cidr strings.
         Optimized for speed.
+
+        :returns: list of all cidr blocks.
         """
         count = self._c_data.count
         if count == 0:
